@@ -8,6 +8,7 @@ export const frontmatterSchema = z
     date: z.string().transform((str) => new Date(str)),
     draft: z.boolean().default(false),
     slug: z.string().optional(),
+    tags: z.array(z.string()).default([]),
   })
   .transform((data) => ({
     ...data,
